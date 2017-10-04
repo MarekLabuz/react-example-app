@@ -16,7 +16,6 @@ class Header extends Component {
 
     this.handleScroll = this.handleScroll.bind(this)
     this.searchBooks = debounce(this.searchBooks.bind(this), 500)
-
     this.handleChange = this.handleChange.bind(this)
 
     this.lastSearchedValue = ''
