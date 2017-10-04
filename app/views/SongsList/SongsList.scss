@@ -1,0 +1,25 @@
+@import "../../shared/color";
+
+.list {
+  list-style-type: none;
+  position: relative;
+  top: 43vh;
+  z-index: 10;
+  padding: 0;
+  margin: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  color: $fontColor;
+  margin-bottom: 50px;
+
+  li {
+    margin-bottom: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .list {
+    width: 90%;
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "extends": "airbnb",
+  "rules": {
+    "semi": ["error", "never"],
+    "space-before-function-paren": ["error", "always"],
+    "comma-dangle": ["error", "never"],
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/forbid-prop-types": 0
+  },
+  "env": {
+    "browser": true,
+    "jest": true
+  }
+}
