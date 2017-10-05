@@ -7,7 +7,7 @@ Tests: ```$ npm test```
 
 Build: ```$ npm run build```
 
-Run server: ```$ npm start```
+Run server/Start application: ```$ npm start```
 
 ### About App
 Application uses iTunes API to search for songs by name. 
