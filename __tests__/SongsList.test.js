@@ -85,7 +85,7 @@ describe('<SongRecord />', () => {
     wrapper.setProps({ likedSongs: { 1: song } })
 
     expect(actions.likeSong.mock.calls.length).toBe(1)
-    expect(actions.likeSong.mock.calls[0][0]).toBe(song)
+    expect(actions.likeSong.mock.calls[0][0]).toEqual(song)
     expect(actions.dislikeSong.mock.calls.length).toBe(0)
 
     wrapper.find('.heartIcon').simulate('click')

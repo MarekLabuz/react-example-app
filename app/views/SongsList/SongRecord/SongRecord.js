@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import pick from 'lodash/pick'
 
 import HeartIcon from '../../../shared/icons/Heart'
 
@@ -19,6 +20,11 @@ Label.propTypes = {
   value: PropTypes.string.isRequired
 }
 
+const parseSong = song => pick(
+  song,
+  ['trackId', 'artworkUrl100', 'trackName', 'artistName', 'collectionName', 'primaryGenreName']
+)
+
 function SongRecord ({ song, likedSongs, actions }) {
   const isLiked = Object.hasOwnProperty.call(likedSongs, song.trackId)
   return (
@@ -35,7 +41,7 @@ function SongRecord ({ song, likedSongs, actions }) {
       <div
         role="button"
         className={style.heartIcon}
-        onClick={() => (isLiked ? actions.dislikeSong(song) : actions.likeSong(song))}
+        onClick={() => (isLiked ? actions.dislikeSong(song) : actions.likeSong(parseSong(song)))}
         tabIndex="-1"
       >
         <HeartIcon style={{ fill: isLiked ? 'red' : 'white' }} />
