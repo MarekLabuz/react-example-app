@@ -14,7 +14,13 @@ describe('<SongsList />', () => {
   const setup = (props, render = mount) => render(<SongsListPure {...props} />)
 
   test('renders correctly', () => {
-    let wrapper = setup({ data: [], isFetching: true, likedSongs: {}, actions: {} })
+    let wrapper = setup({
+      data: [],
+      isFetching: true,
+      likedSongs: {},
+      actions: {},
+      searchMode: true
+    })
 
     expect(wrapper.children().length).toBe(1)
     expect(wrapper.find('ul').length).toBe(0)
@@ -27,7 +33,8 @@ describe('<SongsList />', () => {
         data: [{ trackId: 1 }, { trackId: 2 }, { trackId: 3 }],
         isFetching: false,
         likedSongs: {},
-        actions: {}
+        actions: {},
+        searchMode: true
       },
       shallow
     )

@@ -16,16 +16,16 @@ export function Loader () {
   )
 }
 
-function Loading ({ isFetching, children }) {
+function Loading ({ condition, children }) {
   return (
-    isFetching
+    condition
       ? <Loader />
       : children
   )
 }
 
 Loading.propTypes = {
-  isFetching: PropTypes.bool.isRequired,
+  condition: PropTypes.bool.isRequired,
   children: PropTypes.node.isRequired
 }
 

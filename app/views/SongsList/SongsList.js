@@ -10,9 +10,9 @@ import { likeSong, dislikeSong } from '../../actions/actions'
 
 import style from './SongsList.scss'
 
-function SongsList ({ data, isFetching, likedSongs, actions }) {
+function SongsList ({ data, isFetching, searchMode, likedSongs, actions }) {
   return (
-    <Loading isFetching={isFetching}>
+    <Loading condition={isFetching && searchMode}>
       <ul className={style.list}>
         {data.map(song => (
           <li key={song.trackId}>
@@ -34,13 +34,15 @@ SongsList.propTypes = {
   actions: PropTypes.shape({
     likeSong: PropTypes.func,
     dislikeSong: PropTypes.func
-  }).isRequired
+  }).isRequired,
+  searchMode: PropTypes.bool.isRequired
 }
 
 const mapStateToProps = state => ({
   data: state.searchMode ? state.songsList : Object.values(state.likedSongs),
   likedSongs: state.likedSongs,
-  isFetching: state.isFetching
+  isFetching: state.isFetching,
+  searchMode: state.searchMode
 })
 
 const mapDispatchToProps = dispatch => ({

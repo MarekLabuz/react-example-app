@@ -22,7 +22,7 @@ describe('<Loading />', () => {
 
   test('renders <Loading /> component when isFetching is true', () => {
     const wrapper = shallow(
-      <Loading isFetching><TestChildren /></Loading>
+      <Loading condition><TestChildren /></Loading>
     )
 
     expect(wrapper.find(Loader).length).toBe(1)
@@ -31,7 +31,7 @@ describe('<Loading />', () => {
 
   test('renders children when isFetching is false', () => {
     const wrapper = shallow(
-      <Loading isFetching={false}><TestChildren /></Loading>
+      <Loading condition={false}><TestChildren /></Loading>
     )
 
     expect(wrapper.find(Loader).length).toBe(0)
