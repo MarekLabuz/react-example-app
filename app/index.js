@@ -9,7 +9,9 @@ import App from './App'
 
 import reducer from './reducers/reducers'
 
-const store = createStore(reducer, applyMiddleware(thunk, logger))
+const store = createStore(reducer, applyMiddleware(thunk, ...(
+  process.env.NODE_ENV === 'production' ? [] : [logger]
+)))
 
 const container = document.querySelector('#root')
 ReactDOM.render(
