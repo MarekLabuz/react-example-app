@@ -1,7 +1,7 @@
 ## Example React App using iTunes API
 
 ### Usage
-Install ```$ yarn install```
+Install: ```$ yarn install```
 
 Tests: ```$ npm test```
 
